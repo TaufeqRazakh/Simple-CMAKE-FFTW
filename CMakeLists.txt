@@ -8,11 +8,8 @@ if(${TestFFTW_BINARY_DIR} STREQUAL ${TestFFTW_SOURCE_DIR})
 endif()
 
 #------------------------------------------------
-# Define path for static libraries and excutables
+# Define path for excutables
 #------------------------------------------------
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
-    ${TestFFTW_BINARY_DIR}/lib
-    CACHE PATH "Single output directory for building all libraries.")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
     ${TestFFTW_BINARY_DIR}/bin
     CACHE PATH "Single output directory for building all executables.")
