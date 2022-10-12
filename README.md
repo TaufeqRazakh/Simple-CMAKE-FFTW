@@ -19,7 +19,7 @@ Since we are trying to build this project with CMake there are some aspects whic
 + Find the final executable in the `bin/` directory after finishig the final build command.
 
 ## Discovery Take-off
-The following commands will quickly set you up to running/testing on USC's [Discovery](https://www.carc.usc.edu/user-information/user-guides/hpc-basics/discovery-resources)
+The following commands will quickly set you up to running/testing on USC's [Discovery](https://www.carc.usc.edu/user-information/user-guides/hpc-basics/discovery-resources). Just clone this repo and follow the take-off commands below with the repository as your working directory.
 ```
 salloc -N 1 -p debug
 module purge
