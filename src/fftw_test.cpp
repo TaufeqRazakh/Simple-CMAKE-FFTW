@@ -111,7 +111,7 @@ void test01 ( )
 /*
   Create the input array.
 */
-  in = fftw_malloc ( sizeof ( fftw_complex ) * n );
+  in = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * n );
 
   srand ( seed );
 
@@ -139,7 +139,7 @@ void test01 ( )
 /*
   Create the output array.
 */
-  out = fftw_malloc ( sizeof ( fftw_complex ) * n );
+  out = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * n );
 
   plan_forward = fftw_plan_dft_1d ( n, in, out, FFTW_FORWARD, FFTW_ESTIMATE );
 
@@ -163,7 +163,7 @@ void test01 ( )
 /*
   Recreate the input array.
 */
-  in2 = fftw_malloc ( sizeof ( fftw_complex ) * n );
+  in2 = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * n );
 
   plan_backward = fftw_plan_dft_1d ( n, out, in2, FFTW_BACKWARD, FFTW_ESTIMATE );
 
@@ -239,7 +239,7 @@ void test02 ( )
 /*
   Set up an array to hold the data, and assign the data.
 */
-  in = fftw_malloc ( sizeof ( double ) * n );
+  in = ( double * ) fftw_malloc ( sizeof ( double ) * n );
 
   srand ( seed );
 
@@ -270,7 +270,7 @@ void test02 ( )
 */
   nc = ( n / 2 ) + 1;
 
-  out = fftw_malloc ( sizeof ( fftw_complex ) * nc );
+  out = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * nc );
 
   plan_forward = fftw_plan_dft_r2c_1d ( n, in, out, FFTW_ESTIMATE );
 
@@ -296,7 +296,7 @@ void test02 ( )
   get a "plan", and execute the plan to backtransform the OUT
   FFT coefficients to IN2.
 */
-  in2 = fftw_malloc ( sizeof ( double ) * n );
+  in2 = ( double* ) fftw_malloc ( sizeof ( double ) * n );
 
   plan_backward = fftw_plan_dft_c2r_1d ( n, out, in2, FFTW_ESTIMATE );
 
@@ -390,7 +390,7 @@ void test03 ( )
 /*
   Create the input array.
 */
-  in = fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
+  in = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
 
   srand ( seed );
 
@@ -424,7 +424,7 @@ void test03 ( )
 /*
   Create the output array.
 */
-  out = fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
+  out = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
 
   plan_forward = fftw_plan_dft_2d ( nx, ny, in, out, FFTW_FORWARD, 
     FFTW_ESTIMATE );
@@ -452,7 +452,7 @@ void test03 ( )
 /*
   Recreate the input array.
 */
-  in2 = fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
+  in2 = ( fftw_complex * ) fftw_malloc ( sizeof ( fftw_complex ) * nx * ny );
 
   plan_backward = fftw_plan_dft_2d ( nx, ny, out, in2, FFTW_BACKWARD, 
     FFTW_ESTIMATE );
@@ -592,7 +592,7 @@ void test04 ( )
 */
   nyh = ( ny / 2 ) + 1;
 
-  out = fftw_malloc ( sizeof ( fftw_complex ) * nx * nyh );
+  out = ( fftw_complex * )fftw_malloc ( sizeof ( fftw_complex ) * nx * nyh );
 
   plan_forward = fftw_plan_dft_r2c_2d ( nx, ny, in, out, FFTW_ESTIMATE );
 

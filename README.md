@@ -29,7 +29,7 @@ module load cmake
 module load fftw
 mkdir build
 cd build
-cmake -DCMAKE_C_COMPILER=gcc ..
+cmake -DCMAKE_CXX_COMPILER=gcc ..
 make
 cd bin
 ./fftw-test

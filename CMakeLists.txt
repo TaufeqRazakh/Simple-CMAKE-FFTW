@@ -7,6 +7,8 @@ if(${TestFFTW_BINARY_DIR} STREQUAL ${TestFFTW_SOURCE_DIR})
     message(FATAL_ERROR "Source folder should not be be same as build folder!")
 endif()
 
+set(CMAKE_CXX_STANDARD 17)
+
 #------------------------------------------------
 # Define path for excutables
 #------------------------------------------------
