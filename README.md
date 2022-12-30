@@ -8,9 +8,9 @@ This repository has benefitted by two openly available contributions
 
 
 ## Requirements
-+ gcc 11 or higher
 + cmake 2.8.11 or higher
 + fftw
++ llvm
 
 ## How to build
 Since we are trying to build this project with CMake there are some aspects which need special attention:
@@ -27,11 +27,19 @@ module load gcc/11.3.0
 module load mvapich2
 module load cmake
 module load fftw
+module load llvm
 mkdir build
 cd build
-cmake -DCMAKE_CXX_COMPILER=gcc ..
+cmake -DCMAKE_CXX_COMPILER=clang++ ..
 make
 cd bin
+```
+Now you can test the fftw3 with teh follwing command
+```
+./fftw-test3
+```
+And also test 2D fft without std::vector with the followingcommand
+```
 ./fftw-test
 ```
 
