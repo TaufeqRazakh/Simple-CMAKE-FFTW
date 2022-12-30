@@ -36,11 +36,11 @@ cd bin
 ```
 Now you can test the fftw3 with teh follwing command
 ```
-./fftw-test3
+./test-fftw3
 ```
-And also test 2D fft without std::vector with the followingcommand
+And also test 2D fft without std::vector with the following executable command
 ```
-./fftw-test
+./test-fftw
 ```
 
 ## Steps to follow for rapid development and testing
